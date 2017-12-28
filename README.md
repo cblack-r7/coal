@@ -9,3 +9,7 @@ WARNING!!!: Do not use this except for learning, it is extremely unstable, untes
 * Compile and generate keypairs: `make`
 * Run the victim process with the shared object being loaded: `LD_PRELOAD=./coalkit python3 -m http.server`
 * The process should run as normal and a new bind shell running the mutually authenticated keys with the [NoiseSocket](https://noiseprotocol.org/specs/noisesocket.html) protocol backing it. Access it with the client shell program: `./coal -i id-srv -k id-cli 127.0.0.1:4444`
+
+An example of a fully hooked process with debugging enabled can be seen below:
+![coal example](resources/coal-example.png "coal example")
+
