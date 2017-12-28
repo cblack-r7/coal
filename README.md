@@ -13,3 +13,8 @@ WARNING!!!: Do not use this except for learning, it is extremely unstable, untes
 An example of a fully hooked process with debugging enabled can be seen below:
 ![coal example](resources/coal-example.png "coal example")
 
+## References
+* [Jynx2](https://github.com/chokepoint/Jynx2)
+* [Azazel](https://github.com/chokepoint/azazel)
+* [mfontanini's kmod](https://github.com/mfontanini/Programs-Scripts/blob/master/rootkit/rootkit.c)
+* [Matt Bostock's prior Go work](https://blog.gopheracademy.com/advent-2015/libc-hooking-go-shared-libraries/) - huge shout out for the net/textproto and dl libraries examples
